@@ -1,0 +1,3 @@
+/home/jiahao/Gate_Detection_Viola_Jones/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/jiahao/Gate_Detection_Viola_Jones/cpp/build/CMakeFiles/gate_detector.dir
+/home/jiahao/Gate_Detection_Viola_Jones/cpp/build/CMakeFiles/edit_cache.dir
