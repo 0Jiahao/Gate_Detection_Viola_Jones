@@ -94,6 +94,30 @@ vector<Gate> extract_gates(vector<Rect> tl_corners, vector<Rect> tr_corners, vec
     return gates;
 }
 
+vector<Rect> extract_tl_corners(Mat& img, CascadeClassifier tl_light, int window_size, int step)
+{
+    vector<Rect> tl_corners;
+    for(int x = window_size / 2; x < img.size().width - window_size / 2; x = x + step)
+    {
+        for(int y = window_size / 2; y < img.size().height - window_size / 2; y = y + step)
+        {
+            if(int(img.at<uchar>(x,y)) > 200)
+            {
+                Point p(x - window_size / 2, y - window_size / 2);
+                Rect roi = Rect(p,Size(window_size,window_size));
+                Mat temp = img(roi);
+                vector<Rect> detections;
+                tl_light.detectMultiScale( temp, detections, 1.1, 0, 0, Size(32, 32),Size(32,32));
+                if(detections.size() > 0)
+                {
+                    tl_corners.push_back(roi);
+                }
+            }            
+        }
+    }
+    return tl_corners;
+}
+
 int main()
 {
     // load the trained model
@@ -101,7 +125,7 @@ int main()
     CascadeClassifier tr_light;
     CascadeClassifier bl_light;
     CascadeClassifier br_light;
-    tl_light.load("../../model/tl_light.xml");
+    if(!tl_light.load("../../model/tl_light.xml")){printf("yes");return 0;};
     tr_light.load("../../model/tr_light.xml");
     bl_light.load("../../model/bl_light.xml");
     br_light.load("../../model/br_light.xml");
@@ -114,25 +138,37 @@ int main()
         // read gray image
         Mat img;
         img = cv::imread(filename);
+        cv::cvtColor(img, img, CV_BGR2GRAY);
         // extract corners
         vector<Rect> tl_corners;
         vector<Rect> tr_corners;
         vector<Rect> bl_corners;
         vector<Rect> br_corners;
-        tl_light.detectMultiScale( img, tl_corners, 1.1, 5,0, Size(20, 20),Size(60,60));
-        tr_light.detectMultiScale( img, tr_corners, 1.1, 5,0, Size(20, 20),Size(60,60));
-        bl_light.detectMultiScale( img, bl_corners, 1.1, 5,0, Size(20, 20),Size(60,60));
-        br_light.detectMultiScale( img, br_corners, 1.1, 5,0, Size(20, 20),Size(60,60));
+        clock_t startTime = clock();
+        tl_light.detectMultiScale( img, tl_corners, 1.1, 3,0, Size(32, 32),Size(32,32));
+        clock_t endTime = clock();
+        clock_t clockTicksTaken = endTime - startTime;
+        double timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
+        printf("\n#%i\tt=%0.6f",i,timeInSeconds);
+        startTime = clock();
+        int window_size = 32;
+        vector<Rect> tl_search;
+        tl_search = extract_tl_corners(img, tl_light, 32, 2);
+        endTime = clock();
+        clockTicksTaken = endTime - startTime;
+        timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
+        printf("#%i\tt=%0.6f",i,timeInSeconds);
+        cv::cvtColor(img, img, CV_GRAY2BGR);
         // extract rectangles based on corners
-        vector<Gate> gates;
-        gates = extract_gates(tl_corners, tr_corners, br_corners, bl_corners);
+        // vector<Gate> gates;
+        // gates = extract_gates(tl_corners, tr_corners, br_corners, bl_corners);
         // draw corners tl->red tr->yellow br->blue bl->green
         draw_corners(img, tl_corners, Scalar(  0,  0,255));
-        draw_corners(img, tr_corners, Scalar(  0,255,255));
-        draw_corners(img, bl_corners, Scalar(255,  0,  0));
-        draw_corners(img, br_corners, Scalar(  0,255,  0));
+        draw_corners(img, tl_search, Scalar(  0,255,255));
+        // draw_corners(img, bl_corners, Scalar(255,  0,  0));
+        // draw_corners(img, br_corners, Scalar(  0,255,  0));
         // draw detections
-        draw_gates(img, gates);
+        // draw_gates(img, gates);
         // visualization
         imshow("image",img);
         cv::waitKey(100);
