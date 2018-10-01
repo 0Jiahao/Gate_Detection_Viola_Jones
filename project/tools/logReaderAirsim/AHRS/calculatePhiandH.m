@@ -1,0 +1,23 @@
+function [PHI,H] = calculatePhiandH(states,input,deltaT)
+phi = states(1);
+theta = states(2);
+psi = states(3);
+b_p = states(4);
+b_q = states(5);
+b_r = states(6);
+p = input(1);
+q = input(2);
+r = input(3);
+
+A = [sin(phi)*tan(theta)*(b_r-r)-cos(phi)*tan(theta)*(b_q-q), -cos(phi)*(b_r-r)*(tan(theta)^2+1)-sin(phi)*(b_q-q)*(tan(theta)^2+1), 0, -1, -sin(phi)*tan(theta), -cos(phi)*tan(theta);...
+    cos(phi)*(b_r-r) + sin(phi)*(b_q-q), 0, 0,  0,-cos(phi), sin(phi);...
+    (sin(phi)*(b_r-r))/cos(theta)-(cos(phi)*(b_q-q))/cos(theta),-(cos(phi)*sin(theta)*(b_r-r))/cos(theta)^2-(sin(phi)*sin(theta)*(b_q-q))/cos(theta)^2, 0,  0, -sin(phi)/cos(theta), -cos(phi)/cos(theta);...
+    0,0,0,0,0,0;...
+    0,0,0,0,0,0;...
+    0,0,0,0,0,0];
+PHI = eye(6) + A*deltaT;
+
+H = [1 0 0 0 0 0;...
+    0 1 0 0 0 0;...
+    0 0 1 0 0 0];
+end

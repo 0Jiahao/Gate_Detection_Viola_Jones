@@ -1,0 +1,4 @@
+/media/jiahao/JEVOIS/lib/MavLab/libmavpilotbase.so
+/media/jiahao/JEVOIS/modules/MavLab/CascadeDetector/postinstall
+/media/jiahao/JEVOIS/modules/MavLab/CascadeDetector/CascadeDetector.so
+/media/jiahao/JEVOIS/share/README.txt

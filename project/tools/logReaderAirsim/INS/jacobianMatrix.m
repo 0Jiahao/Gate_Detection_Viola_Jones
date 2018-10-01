@@ -1,0 +1,26 @@
+function [F,H] = jacobianMatrix(states,inputs)
+K_X = -0.5;
+K_Y = -0.5;
+
+phi = inputs(1);
+theta = inputs(2);
+psi = inputs(3);
+ax = inputs(4);
+ay = inputs(5);
+az = inputs(6);
+p = inputs(7);
+q = inputs(8);
+
+F = [ 0, 0, 0, sin(phi)*sin(psi) + cos(phi)*cos(psi)*sin(theta), -(cos(psi)*cos(theta))/K_X,  (cos(phi)*sin(psi) - cos(psi)*sin(phi)*sin(theta))/K_Y,  0;...
+ 0, 0, 0, cos(phi)*sin(psi)*sin(theta) - cos(psi)*sin(phi), -(cos(theta)*sin(psi))/K_X, -(cos(phi)*cos(psi) + sin(phi)*sin(psi)*sin(theta))/K_Y,  0;...
+ 0, 0, 0,                                              cos(phi)*cos(theta),                     sin(theta)/K_X,                                              -(cos(theta)*sin(phi))/K_Y,  0;...
+ 0, 0, 0,                                                                0,                             -q/K_X,                                                                   p/K_Y, -1;...
+ 0, 0, 0,                                                                0,                                  0,                                                                       0,  0;...
+ 0, 0, 0,                                                                0,                                  0,                                                                       0,  0;...
+ 0, 0, 0,                                                                0,                                  0,                                                                       0,  0];
+ 
+H = [1,0,0,0,0,0,0;...
+    0,1,0,0,0,0,0;...
+    0,0,1,0,0,0,0];
+
+end

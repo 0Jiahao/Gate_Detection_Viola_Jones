@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\MavlinkControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\MavlinkInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\SerialPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\SerialPortAdapterWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\MavlinkControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\SerialPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\MavlinkInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\SerialPortAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\src\SerialPortAdapterWin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{36A3D127-3C53-38C9-9002-2B35D611CAAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1B60AF4C-23E2-32C4-BF2E-403A4032EFE0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/install/strip.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/install/local.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/install.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/list_install_components.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/mavpilotbase.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/CascadeDetector.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/jvpkg.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/modinfo_CascadeDetector.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/edit_cache.dir
+/home/jiahao/dronerace2018/target/jevois/pbuild/CMakeFiles/rebuild_cache.dir

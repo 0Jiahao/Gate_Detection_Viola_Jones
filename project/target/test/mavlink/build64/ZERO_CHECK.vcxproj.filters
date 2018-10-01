@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Public\Bigdata\Documents\dronerace2018\target\test\mavlink\build64\CMakeFiles\0d40fc9b6a4e02609247af18e0530b7d\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{20B82FF0-8F78-35FC-9550-5A9673AF5D75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
