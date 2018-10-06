@@ -9,4 +9,5 @@ The red bbox is the detection of top left; yellow for top right; green for botto
 <div align=center><img src="https://github.com/0Jiahao/Gate_Detection_Viola_Jones/blob/master/result/result.gif"/></div>  
 
 ## Future work
-The detector does not have the property rotation-invariance, raw image should be rotated in advanced (data gathered from agent)
+The detector does not have the property rotation-invariance, raw image should be rotated in advanced (data gathered from agent)  
+Only darker corners' detectors are implemented in the current version. Lighter corner detectors can improve its performance in various enviroments.
