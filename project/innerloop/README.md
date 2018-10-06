@@ -1,3 +1,0 @@
-BetaFlight interface
-====================
-
