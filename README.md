@@ -7,7 +7,7 @@ The algorithm is able to perform real time rectangle gate detection by extractin
 ## Result
 The red bbox is the detection of top left; yellow for top right; blue for bottom right and green for bottom left. The pink polygon is the detection of the gate.  
 
-<div align=center><img src="https://github.com/0Jiahao/Gate_Detection_Viola_Jones/blob/master/result/result.gif"/></div>  
+<div align=center><img width="640" height="480" src="https://github.com/0Jiahao/Gate_Detection_Viola_Jones/blob/master/result/result.gif"/></div>  
 
 ## Future work
 The detector does not have the property rotation-invariance, raw image should be rotated in advanced (data gathered from agent);  
