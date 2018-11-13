@@ -1,5 +1,5 @@
 # Gate_Detection_Viola_Jones
-An gate detection algorithm based on cascade object detector for drone race.  
+A gate detection algorithm based on cascade object detector for drone race.  
 
 ## Objectives
 The algorithm is able to perform real time rectangle gate detection by extracting the vertex. Four base pattern detectors are trained in advanced and used to detect the vertex.  
